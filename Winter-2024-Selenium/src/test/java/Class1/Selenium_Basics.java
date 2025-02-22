@@ -24,8 +24,8 @@ public class Selenium_Basics {
     @Test
     public void launchFacebook() throws InterruptedException {
         // 1. Set the location of ChromeDriver
-        // System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe"); // Windows
-        System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver"); // Mac
+         System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe"); // Windows
+        //System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver"); // Mac
         WebDriver driver = new ChromeDriver();
 
         /**
@@ -71,7 +71,8 @@ public class Selenium_Basics {
      */
     @Test
     public void verifyCorrectWebpage() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         String url = "https://www.facebook.com/";
