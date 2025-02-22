@@ -18,7 +18,8 @@ public class UseLocators1 {
     @Test
     public void enterLoginCredentials() throws InterruptedException {
         // 1. Launch facebook.com
-        System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+       // System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         String url = "https://www.facebook.com/";
         driver.get(url);
@@ -48,7 +49,8 @@ public class UseLocators1 {
     @Test
     public void verifyLoginButtonEnabled() throws InterruptedException {
         // 1. Launch facebook.com
-        System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         String url = "https://www.facebook.com/";
         driver.get(url);
