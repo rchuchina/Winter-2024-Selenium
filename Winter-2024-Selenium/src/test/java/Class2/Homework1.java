@@ -21,8 +21,8 @@ public class Homework1 {
     //@BeforeClass
     public void setUp() {
         // Set ChromeDriver path if needed
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-
+        //System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.facebook.com");
