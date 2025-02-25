@@ -16,7 +16,8 @@ public class Homework2 {
      * 1. Launch facebook.com
      * 2. Click on Messenger link
      * 3. Verify "Log in" button is enabled
-     * 4. Verify "Keep me signed in" checkbox is NOT selected
+     * 4. Verify "Keep me signed in" checkbox is NOT selected                             git status
+         *
      * 5. Click on "log in" button
      * 6. Verify "Forgotten your password?" heading is displayed
      * 7. Click on X
