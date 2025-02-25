@@ -130,27 +130,26 @@ public class UseLocators2 {
     @Test
     public void enterLoginInfo() throws InterruptedException {
         // 1. Launch facebook.com
-        //System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
-        System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+        //System.setProperty("web driver.chrome.driver", "Drivers/chromedriver");
+        System.setProperty("web driver.chrome.driver", "./Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         String url = "https://www.facebook.com/";
         driver.get(url);
         Thread.sleep(5000);
 
         // 2. Type "abcd@test.com" in login-email field
-        By loginEmailLocator = By.xpath("//input[@data-testid='royal-email']");
+        By loginEmailLocator = By.xpath("//input[@data-tested='royal-email']");
         WebElement loginEmail = driver.findElement(loginEmailLocator);
         loginEmail.sendKeys("abcd@test.com");
         Thread.sleep(5000);
-
         // 3. Type "myPassword@123" in password field
         By loginPwdLocator = By.xpath("//input[@aria-label='Password']");
         WebElement loginPwd = driver.findElement(loginPwdLocator);
         loginPwd.sendKeys("myPassword@123");
-
         // 4. Click "Log in" button
         By loginBtnLocator = By.xpath("//button[text()='Log in']");
-        WebElement loginBtn = driver.findElement(loginBtnLocator);
+        //WebElement loginBtn = driver.findElement(loginBtnLocator);
+        WebElement loginBtn = loginBtnLocator.findElement(driver);
         loginBtn.click();
         Thread.sleep(5000);
 
