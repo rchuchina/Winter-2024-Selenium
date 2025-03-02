@@ -12,86 +12,6 @@ import java.time.Duration;
 
 public class Homework2 {
 
-        /**
-     * 1. Launch facebook.com
-     * 2. Click on Messenger link
-     * 3. Verify "Log in" button is enabled
-     * 4. Verify "Keep me signed in" checkbox is NOT selected                             git status
-         *
-     * 5. Click on "log in" button
-     * 6. Verify "Forgotten your password?" heading is displayed
-     * 7. Click on X
-     * 8. Verify "Forgotten your password?" heading is NOT displayed
-     */
-    @Test
-    public  void   verifyKeepForgotPassNot() throws InterruptedException {
-        //public static void main(String[] args) throws InterruptedException {
-            // Set the path to your WebDriver
-            //System.setProperty("web driver.chrome.driver", "path/to/chromedriver");
-            System.setProperty("web driver.chrome.driver", "./Drivers/chromedriver.exe"); // Windows
-            // Launch Chrome browser
-            WebDriver driver = new ChromeDriver();
-
-            try {
-                // 1. Launch facebook.com
-                driver.get("https://www.facebook.com");
-                driver.manage().window().maximize();
-
-                // 2. Click on Messenger link
-                WebElement messengerLink = driver.findElement(By.linkText("Messenger"));
-                messengerLink.click();
-
-                // 3. Verify "Log in" button is enabled
-                WebElement loginButton = driver.findElement(By.name("login"));
-                if (loginButton.isEnabled()) {
-                    System.out.println("Log in button is enabled");
-                } else {
-                    System.out.println("Log in button is NOT enabled");
-                }
-
-                // 4. Verify "Keep me signed in" checkbox is NOT selected
-                WebElement keepMeSignedInCheckbox = driver.findElement(By.name("persistent"));
-                if (!keepMeSignedInCheckbox.isSelected()) {
-                    System.out.println("'Keep me signed in' checkbox is NOT selected");
-                } else {
-                    System.out.println("'Keep me signed in' checkbox IS selected");
-                }
-
-                // 5. Click on "Log in" button
-                loginButton.click();
-
-                // 6. Verify "Forgotten your password?" heading is displayed
-                Thread.sleep(2000); // Wait for page to load
-                //WebElement forgotPasswordHeading = driver.findElement(By.xpath("//h2[contains(text(),'Forgotten your password?')]"));
-                 WebElement forgotPassword = driver.findElement(By.xpath("//h2[contains(text(),'Forgotten password?')]"));
-                //if (forgotPasswordHeading.isDisplayed()) {
-                 if (forgotPassword.isDisplayed()) {
-                    //System.out.println("'Forgotten your password?' heading is displayed");
-                    System.out.println("'Forgot password?' heading is displayed");
-                } else {
-                    //System.out.println("'Forgotten your password?' heading is NOT displayed");
-                    System.out.println("'Forgotten password?' heading is NOT displayed");
-                }
-
-                // 7. Click on X to close the pop-up
-                WebElement closeButton = driver.findElement(By.xpath("//button[@aria-label='Close']"));
-                closeButton.click();
-
-                // 8. Verify "Forgotten your password?" heading is NOT displayed
-                Thread.sleep(1000); // Wait for pop-up to close
-                //if (driver.findElements(By.xpath("//h2[contains(text(),'Forgotten your password?')]")).isEmpty()) {
-                if (driver.findElements(By.xpath("//h2[contains(text(),'Forgotten password?')]")).isEmpty()) {
-                    //System.out.println("'Forgotten your password?' heading is NOT displayed");
-                    System.out.println("'Forgotten password?' heading is NOT displayed");
-                } else {
-                    //System.out.println("'Forgotten your password?' heading is STILL displayed");
-                    System.out.println("'Forgotten password?' heading is STILL displayed");
-                }
-            } finally {
-                // Close the browser
-                driver.quit();
-            }
-        }
 
 
     /**
@@ -257,5 +177,7 @@ public class Homework2 {
             }
         }
     }
+
+
 
 
